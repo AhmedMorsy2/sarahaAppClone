@@ -6,7 +6,7 @@
     <h4 class="login">Register</h4>
   </div>
   <div class="card p-5 w-50 m-auto">
-    <form method="POST" action="/handleLogin">
+    <form method="POST" action="/handleRegister">
       <input
         class="form-control"
         placeholder="Enter your Name"
@@ -37,6 +37,7 @@
       <a class="btn btn-default-outline" href="/login">Login</a>
     </form>
   </div>
+  <div class="alert alert-danger"><%= %></div>
 </div>
 
 <%- include('./shared/footer.ejs') %>
