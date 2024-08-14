@@ -1,5 +1,5 @@
 const home = (req, res) => {
-  res.render("home.ejs");
+  res.render("home.ejs", { session: req.session });
 };
 
 export { home };

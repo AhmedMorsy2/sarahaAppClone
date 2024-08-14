@@ -32,6 +32,7 @@
           Menu <span class="navbar-toggler-icon"></span>
         </button>
 
+        <% if (!session?.isLoggedIn) { %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -42,6 +43,18 @@
             </li>
           </ul>
         </div>
+        <% } %> <% if (session?.isLoggedIn) { %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link"><%= session.name %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+        <% } %>
       </div>
     </nav>
   </body>

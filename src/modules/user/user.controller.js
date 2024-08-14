@@ -1,7 +1,7 @@
 import { Message } from "../../../Database/model/messages.model.js";
 
 const user = async (req, res) => {
-  res.render("user.ejs", { session: req.session, userId: req.params.id });
+  res.render("user.ejs", { userId: req.params.id });
 };
 
 const sendMsg = async (req, res) => {
@@ -10,4 +10,10 @@ const sendMsg = async (req, res) => {
   res.redirect("/user/" + req.params.id);
 };
 
-export { user, sendMsg };
+const logout = async (req, res) => {
+  req.session.destroy(function (err) {
+    res.redirect("/login");
+  });
+};
+
+export { user, sendMsg, logout };

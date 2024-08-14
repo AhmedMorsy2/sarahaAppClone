@@ -7,7 +7,6 @@ const message = async (req, res) => {
   await QRCode.toDataURL(url)
     .then((url) => {
       qrCodeUrl = url;
-      // console.log(url);
     })
     .catch((err) => {
       console.error(err);
@@ -23,7 +22,7 @@ const message = async (req, res) => {
       messages,
     });
   } else {
-    redirect("/login");
+    res.redirect("/login");
   }
 };
 
