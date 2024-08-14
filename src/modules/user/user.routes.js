@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { user } from "./user.controller.js";
+import { sendMsg, user } from "./user.controller.js";
 
 let userRouter = Router();
 
 userRouter.get("/user/:id", user);
-
+userRouter.post("/sendMsg/:id", sendMsg);
 export default userRouter;
