@@ -1,7 +1,7 @@
 import { User } from "../../../Database/model/user.model.js";
 import bcrypt from "bcrypt";
 const register = (req, res) => {
-  res.render("register.ejs");
+  res.render("register.ejs", { session: req.session, error: req.query.error });
 };
 
 const handleRegister = async (req, res) => {

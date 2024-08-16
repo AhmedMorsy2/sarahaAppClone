@@ -31,7 +31,11 @@
         type="password"
         name="PasswordConfirmation"
       />
-      <div class="alert alert-danger"><%= %></div>
+
+      <% if (error) { %>
+      <div class="alert alert-danger"><%=error %></div>
+      <% } %>
+
       <button class="btn btn-default-outline my-4 w-100 rounded">
         Register
       </button>
